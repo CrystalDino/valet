@@ -1,17 +1,17 @@
-{{template "manage/header.html" .}}
+{{template "tpl/header.html" .}}
 
 <body>
-	{{template "manage/nav.html" .}}
+	{{template "tpl/nav.html" .}}
 		
-	{{template "manage/sidebar.html" .}}
+	{{template "tpl/sidebar.html" .}}
 		
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
-		{{template "manage/page-header.html" .}}				
+		{{template "tpl/page-header.html" .}}				
 		
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">分类详情列表</div>
+					<div class="panel-heading">账号管理</div>
 					<div class="panel-body">
 						<table data-toggle="table" data-url="/manage/category/data"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
 						    <thead>
@@ -30,7 +30,7 @@
 		</div><!--/.row-->	
 	</div><!--/.main-->
 
-	{{template "manage/footer.html" .}}
+	{{template "tpl/footer.html" .}}
 </body>
 
 </html>

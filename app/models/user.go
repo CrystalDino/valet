@@ -2,14 +2,19 @@ package models
 
 type User struct {
 	Id        int64
-	Name      string
-	Cell      string
-	Password  string
-	Transcode string
+	Name      string `xorm:"char(32) notnull"`
+	Cell      string `xorm:"char(16) notnull index unique"`
+	Password  string `xorm:"char(128) notnull"`
+	Transcode string `xorm:"char(128)"`
+	Email     string `xorm:"char(32)"`
 	Stat      int8
-	CTime     int64
-	MTime     int64
-	DTime     int64
+	CTime     int64 `xorm:"created notnull"`
+	MTime     int64 `xorm:"updated notnull"`
+	DTime     int64 `xorm:"deleted"`
+}
+
+func (user *User) TableName() string {
+	return "user"
 }
 
 func GetUserByName(username string) (user *User) {

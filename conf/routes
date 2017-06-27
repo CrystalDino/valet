@@ -12,6 +12,15 @@ GET     /                                       App.Index
 GET     /login                                  Manage.Login
 POST    /login                                  Manage.CheckLogin
 GET     /logout                                 Manage.Logout
+
+GET     /admin                                  App.Admin
+GET     /coin                                   App.Coin
+GET     /user                                   App.User
+GET     /recharge                               App.Recharge
+GET     /withdraw                               App.Withdraw
+GET     /coinin                                 App.CoinIn
+GET     /coinout                                App.CoinOut
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
