@@ -14,6 +14,12 @@ POST    /login                                  Manage.CheckLogin
 GET     /logout                                 Manage.Logout
 
 GET     /admin                                  App.Admin
+GET     /admin/info/:id                         App.AdminInfo
+GET     /admin/add                              App.AddAdmin
+POST    /admin/add                              App.DealAdminAdd
+GET     /admin/update                           App.UpdateAdmin
+POST    /admin/update                           App.DealAdminUpdate
+
 GET     /coin                                   App.Coin
 GET     /user                                   App.User
 GET     /recharge                               App.Recharge

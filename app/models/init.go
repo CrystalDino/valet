@@ -27,14 +27,21 @@ func InitDB() {
 		revel.ERROR.Fatalln("link to DB error,", err)
 		return
 	}
-	if err = engine.Sync2(&User{}); err != nil {
-		revel.ERROR.Fatalln("sync user failed,", err)
-		return
-	}
-	if err = engine.Sync2(&Admin{}); err != nil {
-		revel.ERROR.Fatalln("sync admin failed,", err)
+
+	if err = SyncModels(); err != nil {
+		revel.ERROR.Fatalln("sync db failed,", err)
 		return
 	}
 
 	revel.INFO.Println("make new engine done--------------------------------------")
+}
+
+func SyncModels() (err error) {
+	if err = engine.Sync2(&User{}); err != nil {
+		return
+	}
+	if err = engine.Sync2(&Admin{}); err != nil {
+		return
+	}
+	return nil
 }

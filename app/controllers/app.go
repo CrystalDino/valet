@@ -42,12 +42,6 @@ func (c App) CheckUser() revel.Result {
 	return nil
 }
 
-func (c App) Admin() revel.Result {
-	c.ViewArgs["bAdmin"] = true
-	c.ViewArgs["title"] = "账号管理"
-	return c.Render()
-}
-
 func (c App) Coin() revel.Result {
 	c.ViewArgs["bCoin"] = true
 	c.ViewArgs["title"] = "币种管理"
